@@ -48,9 +48,15 @@ class Feedback(db.Model):
 @app.route('/submit',methods=['POST','GET'])
 def submit():
     global num
+    global gname
+    global xname
+    global yname
     try:
         if request.method=='POST':
             num=int(request.form['value_1'])
+            gname=request.form['gname']
+            xname=request.form['xname']
+            yname=request.form['yname']
         return render_template('Jinja2_ForLoop.html',value_to=num)
     except:
         return redirect(url_for('home'))
@@ -76,9 +82,10 @@ def plotagraph():
         plt.figure()
         for x,y in zip(x1,y1):
             plt.text(x,y,'({}, {})'.format(x,y))
-        plt.title("Graph!",fontdict={'fontname':'Comic Sans MS','fontsize':20})
-        plt.xlabel("X-Axis",fontdict={'fontname':'Comic Sans MS'})
-        plt.ylabel("Y-Axis",fontdict={'fontname':'Comic Sans MS'})
+
+        plt.title(gname, fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
+        plt.xlabel(xname, fontdict={'fontname': 'Comic Sans MS'})
+        plt.ylabel(yname, fontdict={'fontname': 'Comic Sans MS'})
         plt.plot(x1,y1)
         x1.clear()
         y1.clear()
