@@ -52,6 +52,12 @@
     <div class="container">
 
         <div class="p-3 border bg-light">
+            {% with messages=get_flashed_messages() %} {% if messages %} {% for message in messages %}
+            <div class="alert alert-dark alert-dismissible fade show" role="alert">
+                <strong>Send Successfully!</strong>{{ message }}
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %} {% endif %} {% endwith %}
             <h1 class="font-weight-bold">Welcome To The Graph_Maker</h1><br>
             <h2 class="font-weight-bold text-center">Contact</h2>
             <hr class="my-4">
