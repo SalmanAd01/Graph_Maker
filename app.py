@@ -1,10 +1,9 @@
-from flask import Flask,render_template,request,url_for,redirect,send_file,flash
+from flask import Flask,render_template,request,url_for,redirect,flash
 from flask_mail import Mail, Message
 import io
 import base64
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
-from matplotlib.backends.backend_agg import FigureCanvasAgg as FigureCanvas
 import matplotlib.pyplot as plt
 
 fig,ax=plt.subplots(figsize=(6,6))

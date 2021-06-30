@@ -63,21 +63,21 @@
             <p class="lead">Thanks for Using The Graph_Maker Hope You Like This Feel Free To Post The Feedback, Your Feedbacks Are Always Welcome Here.
             </p>
             <hr class="my-4">
-            <form class="row g-3 needs-validation" novalidate action="/feed" method="POST">
+            <form class="row g-3" action="/feed" method="POST">
                 <div class="col-md-4 position-relative">
-                    <label for="validationTooltip01" class="form-label">First name</label>
-                    <input type="text" class="form-control" name="First_Name" id="validationTooltip01" placeholder="Enter Your First Name" required>
-                    <div class="valid-tooltip">
+                    <label for="validationCustom01" class="form-label">First name</label>
+                    <input type="text" class="form-control" name="First_Name" id="validationCustom01" placeholder="Enter Your First Name" required>
+                    <div class="valid-feedback">
                         Looks good!
                     </div>
                 </div>
                 <div class="col-md-4 position-relative">
-                    <label for="validationTooltip02" class="form-label">Last name</label>
-                    <input type="text" class="form-control" name="Last_Name" id="validationTooltip02" placeholder="Enter Your Last Name" required>
+                    <label for="validationCustom02" class="form-label">Last name</label>
+                    <input type="text" class="form-control" name="Last_Name" id="validationCustom02" placeholder="Enter Your Last Name" required>
                 </div>
         </div>
         <div class="form-floating">
-            <textarea class="form-control" placeholder="Leave a comment here" name="Feed_Back" id="floatingTextarea2" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Leave a comment here" name="Feed_Back" id="floatingTextarea2" style="height: 100px" required></textarea>
             <label for="floatingTextarea2">Feedback</label>
         </div>
     </div>
