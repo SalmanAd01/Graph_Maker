@@ -3,6 +3,8 @@ from flask_mail import Mail, Message
 import io
 import base64
 from datetime import datetime
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from flask_pymongo import PyMongo
 fig,ax=plt.subplots(figsize=(6,6))
@@ -34,8 +36,6 @@ def ma():
         mail.send(mo)
         flash('Thanks For Contacting.')
         return redirect(url_for('Contact'))
-
-
 @app.route('/submit',methods=['POST','GET'])
 def submit():
     global num
@@ -57,7 +57,6 @@ def feedback():
         First_Name=request.form['First_Name']
         Last_Name=request.form['Last_Name']
         Feed_Back=request.form['Feed_Back']
-
         db.books.insert_one({'firstname':First_Name,'lastname':Last_Name , 'feedbacks':Feed_Back,'datatime':datetime.utcnow()})
         flash('we really appreciate your feedback')
     return render_template('feedback.html')
@@ -72,7 +71,6 @@ def plotagraph():
         plt.figure()
         for x,y in zip(x1,y1):
             plt.text(x,y,'({}, {})'.format(x,y))
-
         plt.title(gname, fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
         plt.xlabel(xname, fontdict={'fontname': 'Comic Sans MS'})
         plt.ylabel(yname, fontdict={'fontname': 'Comic Sans MS'})
