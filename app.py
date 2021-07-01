@@ -58,7 +58,7 @@ def feedback():
         Last_Name=request.form['Last_Name']
         Feed_Back=request.form['Feed_Back']
 
-        db.feedback.insert_one({'firstname':First_Name,'lastname':Last_Name , 'feedbacks':Feed_Back,'datatime':datetime.utcnow()})
+        db.books.insert_one({'firstname':First_Name,'lastname':Last_Name , 'feedbacks':Feed_Back,'datatime':datetime.utcnow()})
         flash('we really appreciate your feedback')
     return render_template('feedback.html')
 @app.route('/plotagraph',methods=['GET','POST'])
