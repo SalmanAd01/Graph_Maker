@@ -9,7 +9,7 @@ fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
 app=Flask(__name__)
-app.config['MONGO_URI']="mongodb://localhost:27017/test1"
+app.config['MONGO_URI']="mongodb+srv://Niha:Pass12345@cluster0.bvj6w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
 mongo=PyMongo(app)
 db=mongo.db
 app.secret_key = 'ye ye'
