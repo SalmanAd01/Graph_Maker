@@ -11,15 +11,15 @@ fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
 app=Flask(__name__)
-app.config['MONGO_URI']="mongodb+srv://Niha:Pass12345@cluster0.bvj6w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+app.config['MONGO_URI']= #Enter URI of Mongodb ALtas
 mongo=PyMongo(app)
 db=mongo.db
 app.secret_key = 'ye ye'
 mail=Mail(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
-app.config['MAIL_USERNAME']='salmanad5s3@gmail.com'
-app.config['MAIL_PASSWORD']='Salman9021618891'
+app.config['MAIL_USERNAME']=#Enter Your Email
+app.config['MAIL_PASSWORD']=#Enter Your Password
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
 mail=Mail(app)
@@ -31,7 +31,7 @@ def ma():
     if request.method == 'POST':
         email=request.form['email']
         msg=request.form['msg']
-        mo=Message("Message From Graph_Maker",sender=email,recipients=['salmanad5s3@gmail.com'])
+        mo=Message("Message From Graph_Maker",sender=email,recipients=[#Your Email Id])
         mo.body=msg
         mail.send(mo)
         flash('Thanks For Contacting.')
