@@ -23,4 +23,7 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
 - Hit The Enter Button
 - Here You Need To Provide The Actual X And Y Co-Ordinates eg:<br><br>
 ![Screenshot (363)](https://user-images.githubusercontent.com/80933048/128856766-91a7886d-628f-4a14-a7ea-c2f2f2193442.png)
+- Hit The Plot A Graph Button And That's It <br><br>
+![Screenshot (366)](https://user-images.githubusercontent.com/80933048/128857170-65e3cf12-e018-4cc4-b255-06898482a256.png)
+- Thanks For Reading This If You Have Any Doubt Post a Comment.
 
