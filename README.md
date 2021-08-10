@@ -8,7 +8,7 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
 ## Badges
 
 
-[![Discord](https://img.shields.io/badge/Bot-Discord-blue)](https://discord.com/developers/docs/game-sdk/applications)
+[![Mongodb](https://img.shields.io/badge/Monogodb-Database-blue)](https://www.mongodb.com/try/download/community)
 
 [![Python](https://img.shields.io/badge/Python-v3.9.6-blue)](https://www.python.org/downloads/)
 
