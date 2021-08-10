@@ -16,4 +16,4 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
  
 [![LinkedIn](https://img.shields.io/badge/in-LinkedIn-blue)](https://www.linkedin.com/in/salman-adhikari-a938911bb)
 
-[![COC](https://img.shields.io/badge/COC-API-blue)](https://developer.clashofclans.com/#/)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap%20-Frontend-blue)](https://getbootstrap.com/)
