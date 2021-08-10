@@ -17,3 +17,5 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
 
 ## How To Use
 - Open Up The Link :  https://graphmakertester.herokuapp.com/
+- Now Here You Need To Provide The Total Number Of Pairs For Which You Wanted To Plot Graphs<br>You Can Provide The Graph Name Which Will Appear On The Top Of The Graph Or You Also Can Provide The Name Of X and Y Axis eg:
+![Screenshot (359)](https://user-images.githubusercontent.com/80933048/128854881-a6f2c053-7501-4031-8888-6c42185d973a.png)
