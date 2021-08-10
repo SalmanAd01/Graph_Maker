@@ -16,5 +16,4 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
 [![Bootstrap](https://img.shields.io/badge/Bootstrap%20-Frontend-blue)](https://getbootstrap.com/)
 
 ## How To Use
-- Click On The Link Below
-Link :  https://graph-maker105.herokuapp.com/
+- Open Up The Link :  https://graph-maker105.herokuapp.com/
