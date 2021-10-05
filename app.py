@@ -1,19 +1,29 @@
 from flask import Flask,render_template,request,url_for,redirect,flash
 from flask_mail import Mail, Message
 import io
+import os
 import base64
 from datetime import datetime
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from flask_pymongo import PyMongo
+from flask_sqlalchemy import SQLAlchemy
 fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
 app=Flask(__name__)
-app.config['MONGO_URI']="mongodb+srv://Niha:Pass12345@cluster0.bvj6w.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
-mongo=PyMongo(app)
-db=mongo.db
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+db = SQLAlchemy(app)
+class FeedBack_form(db.Model):
+    __tablename__ = 'feedback_form'
+    id = db.Column(db.Integer, primary_key=True)
+    firtsname = db.Column(db.String, unique=True)
+    lastname = db.Column(db.String, unique=True)
+    Feedback = db.Column(db.String,default="NOT_SET")
+
+    def __repr__(self) -> str:
+        return f"{self.id} - {self.username}"
 app.secret_key = 'ye ye'
 mail=Mail(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
@@ -57,7 +67,9 @@ def feedback():
         First_Name=request.form['First_Name']
         Last_Name=request.form['Last_Name']
         Feed_Back=request.form['Feed_Back']
-        db.books.insert_one({'firstname':First_Name,'lastname':Last_Name , 'feedbacks':Feed_Back,'datatime':datetime.utcnow()})
+        just1 = FeedBack_form(firtsname=First_Name, lastname=Last_Name, Feedback=Feed_Back)
+        db.session.add(just1)
+        db.session.commit()
         flash('we really appreciate your feedback')
     return render_template('feedback.html')
 @app.route('/plotagraph',methods=['GET','POST'])
