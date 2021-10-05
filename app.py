@@ -1,6 +1,7 @@
 from flask import Flask,render_template,request,url_for,redirect,flash
 from flask_mail import Mail, Message
 import io
+import psycopg2
 import os
 import base64
 from datetime import datetime
@@ -12,7 +13,8 @@ fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
 app=Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
