@@ -30,12 +30,12 @@ class FeedBack_form(db.Model):
 
     def __repr__(self) -> str:
         return f"{self.id} - {self.username}"
-app.secret_key = 'ye ye'
+app.secret_key = os.environ["SECRET"]
 mail=Mail(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
-app.config['MAIL_USERNAME']='salmanad5s3@gmail.com'
-app.config['MAIL_PASSWORD']='Sa7350811587@gggggg'
+app.config['MAIL_USERNAME']=os.environ["EMAIL"]
+app.config['MAIL_PASSWORD']=os.environ["PASSWORD"]
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
 mail=Mail(app)
@@ -47,7 +47,7 @@ def ma():
     if request.method == 'POST':
         email=request.form['email']
         msg=request.form['msg']
-        mo=Message("Message From Graph_Maker",sender=email,recipients=['salmanad5s3@gmail.com'])
+        mo=Message("Message From Graph_Maker",sender=email,recipients=os.environ["EMAIL"])
         mo.body=msg
         mail.send(mo)
         flash('Thanks For Contacting.')
