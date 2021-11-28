@@ -41,10 +41,10 @@ mail=Mail(app)
 @app.route('/')
 def home():
     return render_template('index.html')
-@app.route('/ma',methods=['GET','POST'])
-def ma():
-    try:
-        if request.method == 'POST':
+@app.route('/Contact',methods=['GET','POST'])
+def Contact():
+    if request.method == 'POST':
+        try:
             email=request.form['email']
             msg=request.form['msg']
             mo=Message("Message From Graph_Maker",sender=email,recipients=[os.environ["EMAIL"]])
@@ -52,10 +52,12 @@ def ma():
             mail.send(mo)
             flash('Thanks For Contacting.')
             return redirect(url_for('Contact'))
-    except Exception as e:
-        print('--->>> ',e)
-        flash('Some Error occurred')
-        return redirect(url_for('Contact'))
+        except Exception as e:
+            print('--->>> ',e)
+            flash('Some Error occurred')
+            return redirect(url_for('Contact'))
+    else:
+        return render_template('Contact.html')
 @app.route('/submit',methods=['POST','GET'])
 def submit():
     try:
@@ -119,8 +121,5 @@ def feedb():
 @app.route('/upcoming_features')
 def upcoming_features():
     return render_template('Upcoming_Features.html')
-@app.route('/Contact')
-def Contact():
-    return render_template('Contact.html')
 if __name__ == '__main__':
     app.run(debug=True)
