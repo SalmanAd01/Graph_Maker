@@ -70,7 +70,7 @@ def submit():
     except Exception as e:
         print('-->>',e)
         return redirect(url_for('home'))
-@app.route('/feed',methods=['GET','POST'])
+@app.route('/feedback',methods=['GET','POST'])
 def feedback():
     if request.method == 'POST':
         try:
@@ -115,9 +115,6 @@ def plotagraph():
 @app.route('/about')
 def about():
     return render_template('About.html')
-@app.route('/feedba')
-def feedb():
-    return render_template('feedback.html')
 @app.route('/upcoming_features')
 def upcoming_features():
     return render_template('Upcoming_Features.html')
