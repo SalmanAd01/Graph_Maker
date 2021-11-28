@@ -47,7 +47,7 @@ def ma():
         if request.method == 'POST':
             email=request.form['email']
             msg=request.form['msg']
-            mo=Message("Message From Graph_Maker",sender=email,recipients=os.environ["EMAIL"])
+            mo=Message("Message From Graph_Maker",sender=email,recipients=[os.environ["EMAIL"]])
             mo.body=msg
             mail.send(mo)
             flash('Thanks For Contacting.')
