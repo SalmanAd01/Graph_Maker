@@ -43,13 +43,18 @@ def home():
     return render_template('index.html')
 @app.route('/ma',methods=['GET','POST'])
 def ma():
-    if request.method == 'POST':
-        email=request.form['email']
-        msg=request.form['msg']
-        mo=Message("Message From Graph_Maker",sender=email,recipients=os.environ["EMAIL"])
-        mo.body=msg
-        mail.send(mo)
-        flash('Thanks For Contacting.')
+    try:
+        if request.method == 'POST':
+            email=request.form['email']
+            msg=request.form['msg']
+            mo=Message("Message From Graph_Maker",sender=email,recipients=os.environ["EMAIL"])
+            mo.body=msg
+            mail.send(mo)
+            flash('Thanks For Contacting.')
+            return redirect(url_for('Contact'))
+    except Exception as e:
+        print('--->>> ',e)
+        flash('Some Error occurred')
         return redirect(url_for('Contact'))
 @app.route('/submit',methods=['POST','GET'])
 def submit():
@@ -65,15 +70,20 @@ def submit():
         return redirect(url_for('home'))
 @app.route('/feed',methods=['GET','POST'])
 def feedback():
-    if request.method == 'POST':
-        First_Name=request.form['First_Name']
-        Last_Name=request.form['Last_Name']
-        Feed_Back=request.form['Feed_Back']
-        just1 = FeedBack_form(firtsname=First_Name, lastname=Last_Name, Feedback=Feed_Back)
-        db.session.add(just1)
-        db.session.commit()
-        flash('we really appreciate your feedback')
-    return render_template('feedback.html')
+    try:
+        if request.method == 'POST':
+            First_Name=request.form['First_Name']
+            Last_Name=request.form['Last_Name']
+            Feed_Back=request.form['Feed_Back']
+            just1 = FeedBack_form(firtsname=First_Name, lastname=Last_Name, Feedback=Feed_Back)
+            db.session.add(just1)
+            db.session.commit()
+            flash('we really appreciate your feedback')
+            return render_template('feedback.html')
+    except:
+            flash('Some Error occurred')
+            return render_template('feedback.html')
+
 @app.route('/plotagraph',methods=['GET','POST'])
 def plotagraph():
     try:
