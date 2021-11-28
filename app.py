@@ -70,8 +70,8 @@ def submit():
         return redirect(url_for('home'))
 @app.route('/feed',methods=['GET','POST'])
 def feedback():
-    try:
-        if request.method == 'POST':
+    if request.method == 'POST':
+        try:
             First_Name=request.form['First_Name']
             Last_Name=request.form['Last_Name']
             Feed_Back=request.form['Feed_Back']
@@ -80,9 +80,11 @@ def feedback():
             db.session.commit()
             flash('we really appreciate your feedback')
             return render_template('feedback.html')
-    except:
-            flash('Some Error occurred')
-            return render_template('feedback.html')
+
+        except:
+                flash('Some Error occurred')
+    else:
+        return render_template('feedback.html')
 
 @app.route('/plotagraph',methods=['GET','POST'])
 def plotagraph():
