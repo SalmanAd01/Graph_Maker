@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,url_for,redirect,flash
+from flask import Flask,render_template,request,url_for,redirect,flash,session
 from flask_mail import Mail, Message
 import io
 import psycopg2
@@ -9,12 +9,16 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from flask_sqlalchemy import SQLAlchemy
+from flask_session import Session
 fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
 app=Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+Session(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
-# app.config['SQLALCHEMY_DATABASE_URI'] = ''
+app.config['SQLALCHEMY_DATABASE_URI'] = ''
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
@@ -50,18 +54,15 @@ def ma():
         return redirect(url_for('Contact'))
 @app.route('/submit',methods=['POST','GET'])
 def submit():
-    global num
-    global gname
-    global xname
-    global yname
     try:
         if request.method=='POST':
             num=int(request.form['value_1'])
-            gname=request.form['gname']
-            xname=request.form['xname']
-            yname=request.form['yname']
+            session["gname"]=request.form['gname']
+            session["xname"]=request.form['xname']
+            session["yname"]=request.form['yname']
         return render_template('Jinja2_ForLoop.html',value_to=num)
-    except:
+    except Exception as e:
+        print('-->>',e)
         return redirect(url_for('home'))
 @app.route('/feed',methods=['GET','POST'])
 def feedback():
@@ -78,16 +79,16 @@ def feedback():
 def plotagraph():
     try:
         if request.method == 'POST':
-            for i in range(num):
+            for i in range((len(request.form.to_dict())//2)):
                 x1.append(float(request.form['x'+str(i)]))
                 y1.append(float(request.form['y'+str(i)]))
         img=io.BytesIO()
         plt.figure()
         for x,y in zip(x1,y1):
             plt.text(x,y,'({}, {})'.format(x,y))
-        plt.title(gname, fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
-        plt.xlabel(xname, fontdict={'fontname': 'Comic Sans MS'})
-        plt.ylabel(yname, fontdict={'fontname': 'Comic Sans MS'})
+        plt.title(session.get("gname"), fontdict={'fontname': 'Comic Sans MS', 'fontsize': 20})
+        plt.xlabel(session.get("xname"), fontdict={'fontname': 'Comic Sans MS'})
+        plt.ylabel(session.get("yname"), fontdict={'fontname': 'Comic Sans MS'})
         plt.plot(x1,y1)
         x1.clear()
         y1.clear()
@@ -95,7 +96,8 @@ def plotagraph():
         img.seek(0)
         plot_url = base64.b64encode(img.getvalue()).decode()
         return render_template('graph.html',plot_url=plot_url)    
-    except:
+    except Exception as e:
+        print(e)
         return redirect(url_for('submit'))
 @app.route('/about')
 def about():
