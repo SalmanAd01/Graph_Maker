@@ -17,7 +17,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{ url_for('static',filename='logo3.ico')}}" type="image/x-icon">
 
 
@@ -27,7 +28,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <b class="navbar-brand">Graph_Maker</b>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,7 +45,7 @@
                         <a class="nav-link" href="{{ url_for('upcoming_features') }}">Upcoming Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('feedb') }}">Feedback!</a>
+                        <a class="nav-link" href="{{ url_for('feedback') }}">Feedback!</a>
                     </li>
             </div>
         </div>
@@ -54,7 +57,8 @@
             <h1 class="font-weight-bold">Welcome To The Graph_Maker</h1><br>
             <h2 class="font-weight-bold text-center">Upcoming Features</h2>
 
-            <p class="lead">Thanks for reading this. Based on your Positive Feedback soon i'm going to add more features, like you will able be to plot other types of graphs as well.
+            <p class="lead">Thanks for reading this. Based on your Positive Feedback soon i'm going to add more
+                features, like you will able be to plot other types of graphs as well.
             </p>
             <b>Example.</b>
             <hr class="my-4">
@@ -62,13 +66,18 @@
                 <img src="{{ url_for('static',filename='Pie_Chart.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">3.Pie Chart</h5>
-                    <p class="card-text">A pie chart is a circular graph used to illustrate numerical proportions in a dataset. This graph is usually divided into various sectors, where each sector represents the proportion of a particular numerical element in the set.</p>
-                    <a href="#" class="btn btn-primary disabled">Explore</a><a href="#" class="btn btn-primary disabled">Plot Pie Chart</a>
+                    <p class="card-text">A pie chart is a circular graph used to illustrate numerical proportions in a
+                        dataset. This graph is usually divided into various sectors, where each sector represents the
+                        proportion of a particular numerical element in the set.</p>
+                    <a href="#" class="btn btn-primary disabled">Explore</a><a href="#"
+                        class="btn btn-primary disabled">Plot Pie Chart</a>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
 
     <footer class="page-footer bg-dark">
 
@@ -103,7 +112,7 @@
                         <li class="my-2"><a href="/">Home</a></li>
                         <li class="my-2"><a href="{{ url_for('about') }}">About</a></li>
                         <li class="my-2"> <a href="{{ url_for('Contact') }}">Contact</a></li>
-                        <li class="my-2"> <a href="{{ url_for('feedb') }}">Feedback</a></li>
+                        <li class="my-2"> <a href="{{ url_for('feedback') }}">Feedback</a></li>
                     </ul>
                 </div>
 
@@ -129,9 +138,12 @@
     </footer>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 </body>
 
 </html>

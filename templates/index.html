@@ -15,7 +15,8 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/css/mdb.min.css" rel="stylesheet">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="shortcut icon" href="{{ url_for('static',filename='logo3.ico')}}" type="image/x-icon">
 </head>
 
@@ -23,7 +24,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
             <b class="navbar-brand">Graph_Maker</b>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,13 +60,17 @@
                 <p class="lead">Enter The Total Number Of Pairs For Which You Wanted To Plot The Graphs:</p>
                 <div class="row">
                     <div class="col">
-                        <input type="text" class="form-control" name="value_1" placeholder="Enter Numbers of Pairs" aria-label="First name">
+                        <input type="text" class="form-control" name="value_1" placeholder="Enter Numbers of Pairs"
+                            aria-label="First name">
                     </div>
                 </div>
                 <hr class="my-4">
                 <p>
-                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Enter The Name Of The Graph</a>
-                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Enter The Name For Axis</button>
+                    <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+                        aria-expanded="false" aria-controls="multiCollapseExample1">Enter The Name Of The Graph</a>
+                    <button class="btn btn-primary" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#multiCollapseExample2" aria-expanded="false"
+                        aria-controls="multiCollapseExample2">Enter The Name For Axis</button>
                 </p>
                 <div class="row">
                     <div class="col">
@@ -71,7 +78,8 @@
                             <div class="row g-2 pb-3">
                                 <div class="col-md">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="gname" value="Graph!" id="floatingInputGrid">
+                                        <input type="text" class="form-control" name="gname" value="Graph!"
+                                            id="floatingInputGrid">
                                         <label for="floatingInputGrid">Graph</label>
                                     </div>
                                 </div>
@@ -83,7 +91,8 @@
                             <div class="row g-2 pb-3">
                                 <div class="col-md">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="xname" value="X-axis" id="floatingInputGrid">
+                                        <input type="text" class="form-control" name="xname" value="X-axis"
+                                            id="floatingInputGrid">
                                         <label for="floatingInputGrid">X-axis</label>
                                     </div>
                                 </div>
@@ -91,7 +100,8 @@
                             <div class="row g-2 pb-3">
                                 <div class="col-md">
                                     <div class="form-floating">
-                                        <input type="text" class="form-control" name="yname" value="Y-Axis" id="floatingInputGrid">
+                                        <input type="text" class="form-control" name="yname" value="Y-Axis"
+                                            id="floatingInputGrid">
                                         <label for="floatingInputGrid">Y-axis</label>
                                     </div>
                                 </div>
@@ -109,7 +119,9 @@
             </div>
         </div>
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
     <br>
     <br>
     <br>
@@ -118,13 +130,15 @@
             <div class="col">
                 <div class="p-3 border bg-light">
                     <b id="graph_b">What's The Graph?</b>
-                    <p id="graph_b_p">a diagram showing the relation between variable quantities,typically of two variables,each measured along one of a pair of axes at right angels</p>
+                    <p id="graph_b_p">a diagram showing the relation between variable quantities,typically of two
+                        variables,each measured along one of a pair of axes at right angels</p>
                 </div>
             </div>
             <div class="col">
                 <div class="p-3 border bg-light">
                     <b id="graph_mb">What's The Graph_Maker</b>
-                    <p id="graph_mb_p">Graph_Maker is just a website that will help you to plot the graph of any given co-ordinates and for any numbers of pairs
+                    <p id="graph_mb_p">Graph_Maker is just a website that will help you to plot the graph of any given
+                        co-ordinates and for any numbers of pairs
                     </p><br>
                 </div>
             </div>
@@ -138,7 +152,9 @@
                 <img src="{{url_for('static',filename='Line_Graph.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">1.Line Graph</h5>
-                    <p class="card-text">Line graphs are represented by a group of data points joined together by a straight line. Each of these data points describes the relationship between the horizontal and the vertical axis on the graph.</p>
+                    <p class="card-text">Line graphs are represented by a group of data points joined together by a
+                        straight line. Each of these data points describes the relationship between the horizontal and
+                        the vertical axis on the graph.</p>
                     <a href="https://en.wikipedia.org/wiki/Line_graph" class="btn btn-primary">Explore</a>
                 </div>
             </div>
@@ -148,7 +164,9 @@
                 <img src="{{url_for('static',filename='Area_Chart.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">2.Area Chart</h5>
-                    <p class="card-text">Area charts are used to collectively measure data trends over a period of time by coloring the area between the line segment and the x-axis. In simpler terms, an area chart is an extension of the line chart.</p>
+                    <p class="card-text">Area charts are used to collectively measure data trends over a period of time
+                        by coloring the area between the line segment and the x-axis. In simpler terms, an area chart is
+                        an extension of the line chart.</p>
                     <a href="https://en.wikipedia.org/wiki/Area_chart" class="btn btn-primary">Explore</a>
 
                 </div>
@@ -159,7 +177,9 @@
                 <img src="{{url_for('static',filename='Pie_Chart.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">3.Pie Chart</h5>
-                    <p class="card-text">A pie chart is a circular graph used to illustrate numerical proportions in a dataset. This graph is usually divided into various sectors, where each sector represents the proportion of a particular numerical element in the set.
+                    <p class="card-text">A pie chart is a circular graph used to illustrate numerical proportions in a
+                        dataset. This graph is usually divided into various sectors, where each sector represents the
+                        proportion of a particular numerical element in the set.
                     </p>
                     <a href="https://en.wikipedia.org/wiki/Pie_chart" class="btn btn-primary">Explore</a>
                 </div>
@@ -170,8 +190,11 @@
                 <img src="{{url_for('static',filename='Bar_Graph.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">4.Bar Graph</h5>
-                    <p class="card-text">A bar chart is a graph represented by spaced rectangular bars that describe the data points in a set of data. It is usually used to plot discrete and categorical data. The horizontal axis of the chart represents categorical data while
-                        the vertical axis of the chart defines discrete data. Although the rectangular bars in a bar chart are mostly placed vertically, they can also be horizontal.</p>
+                    <p class="card-text">A bar chart is a graph represented by spaced rectangular bars that describe the
+                        data points in a set of data. It is usually used to plot discrete and categorical data. The
+                        horizontal axis of the chart represents categorical data while
+                        the vertical axis of the chart defines discrete data. Although the rectangular bars in a bar
+                        chart are mostly placed vertically, they can also be horizontal.</p>
                     <a href="https://en.wikipedia.org/wiki/Bar_chart" class="btn btn-primary">Explore</a>
 
                 </div>
@@ -187,9 +210,11 @@
 
                     <div class="col-md-12 text-center">
 
-                        <a href="https://twitter.com/AdhikariSalman?s=09"><i class="fab fa-twitter white-text mr-4"> </i></a>
+                        <a href="https://twitter.com/AdhikariSalman?s=09"><i class="fab fa-twitter white-text mr-4">
+                            </i></a>
                         <a href="https://github.com/YourDad07"><i class="fab fa-github-square white-text mr-4"></i></a>
-                        <a href="https://www.linkedin.com/in/salman-adhikari-a938911bb"><i class="fab fa-linkedin-in white-text mr-4"> </i></a>
+                        <a href="https://www.linkedin.com/in/salman-adhikari-a938911bb"><i
+                                class="fab fa-linkedin-in white-text mr-4"> </i></a>
 
                     </div>
 
@@ -240,9 +265,12 @@
     </footer>
 
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.0/js/mdb.min.js"></script>
 </body>
 
 </html>
