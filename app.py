@@ -27,9 +27,9 @@ db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
     __tablename__ = 'feedback_form'
     id = db.Column(db.Integer, primary_key=True)
-    firtsname = db.Column(db.String, nullable=False)
-    lastname = db.Column(db.String, nullable=False)
-    Feedback = db.Column(db.String,nullable=False)
+    firtsname = db.Column(db.String, nullable=False,unique=False)
+    lastname = db.Column(db.String, nullable=False,unique=False)
+    Feedback = db.Column(db.String,nullable=False,unique=False)
 
     def __repr__(self) -> str:
         return f"{self.id} - {self.username}"
