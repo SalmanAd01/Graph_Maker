@@ -82,7 +82,8 @@ def feedback():
             db.session.commit()
             flash('we really appreciate your feedback')
             return render_template('feedback.html')
-        except:
+        except Exception as e:
+            print(e)
             flash('Some Error occurred')
             return render_template('feedback.html')
     else:
