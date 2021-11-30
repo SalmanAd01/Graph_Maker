@@ -1,14 +1,20 @@
 {% extends 'Taking_Co-Ordinates.html' %} {% block content %} {% for i in range(value_to) %}
 <div class="container">
 
-    <div class="row">
-        <div class="col">
+    <div class="row align-items-center">
+        <div class="col-2">
             <label class="inline">Enter The X{{ i+1 }} Co-Ordinate</label>
-            <input class="inline" type="text" class="form-control" name=x{{ i }} placeholder="Enter X Co-Ordinate" aria-label="First name">
         </div>
-        <div class="col">
+        <div class="col-3">
+            <input class="inline" type="text" class="form-control" name=x{{ i }} placeholder="Enter X Co-Ordinate"
+                aria-label="First name">
+        </div>
+        <div class="col-2">
             <label class="inline">Enter The Y{{ i+1 }} Co-Ordinate</label>
-            <input class="inline" type="text" class="form-control" name=y{{ i }} placeholder="Enter Y Co-Ordinate" aria-label="First name">
+        </div>
+        <div class="col-3">
+            <input class="inline" type="text" class="form-control" name=y{{ i }} placeholder="Enter Y Co-Ordinate"
+                aria-label="First name">
         </div>
     </div>
 </div>{% endfor %} {% endblock %}
