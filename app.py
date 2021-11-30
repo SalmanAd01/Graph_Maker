@@ -17,7 +17,7 @@ app=Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-# app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
@@ -29,12 +29,12 @@ class FeedBack_form(db.Model):
 
     def __repr__(self) -> str:
         return f"{self.id} - {self.username}"
-# app.secret_key = os.environ["SECRET"]
+app.secret_key = os.environ["SECRET"]
 mail=Mail(app)
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT']=465
-# app.config['MAIL_USERNAME']=os.environ["EMAIL"]
-# app.config['MAIL_PASSWORD']=os.environ["PASSWORD"]
+app.config['MAIL_USERNAME']=os.environ["EMAIL"]
+app.config['MAIL_PASSWORD']=os.environ["PASSWORD"]
 app.config['MAIL_USE_TLS']=False
 app.config['MAIL_USE_SSL']=True
 mail=Mail(app)
