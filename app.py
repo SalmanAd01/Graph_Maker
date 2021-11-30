@@ -25,7 +25,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
-    __tablename__ = 'feedback_form'
+    __tablename__ = 'feedback_forms'
     id = db.Column(db.Integer, primary_key=True)
     firtsname = db.Column(db.String, nullable=False,unique=False)
     lastname = db.Column(db.String, nullable=False,unique=False)
