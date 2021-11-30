@@ -26,12 +26,4 @@ Hey It's A Website Made With bootstrap Python And Mongodb That Will Help You To 
 - Hit The Plot A Graph Button And That's It <br><br>
 ![Screenshot (366)](https://user-images.githubusercontent.com/80933048/128857170-65e3cf12-e018-4cc4-b255-06898482a256.png)
 
-## About Code
-- Line 14 : Here You Need To Paste The Link Of Your Mongodb Altas 
-- Line 21 : Here You Need To Provide The Email Id On Which You Wanted To Recieve The Mail
-- Line 22 : Here You Need To Provide The Password Of Your Email Account
-- Line 34 : Type The Same Email Id Which You Did In Line 21
-<br><br><br>
-- Thanks For Reading This If You Have Any Doubt Post a Comment.
-
 
