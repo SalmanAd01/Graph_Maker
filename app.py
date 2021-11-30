@@ -29,7 +29,7 @@ class FeedBack_form(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     firtsname = db.Column(db.String, nullable=False)
     lastname = db.Column(db.String, nullable=False)
-    Feedback = db.Column(db.String,default="NOT_SET")
+    Feedback = db.Column(db.String,nullable=False)
 
     def __repr__(self) -> str:
         return f"{self.id} - {self.username}"
