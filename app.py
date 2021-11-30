@@ -4,6 +4,7 @@ import io
 import psycopg2
 import os
 import base64
+import re
 from datetime import datetime
 import matplotlib
 matplotlib.use('Agg')
@@ -13,11 +14,14 @@ from flask_session import Session
 fig,ax=plt.subplots(figsize=(6,6))
 x1=[]
 y1=[]
+uri = os.getenv("DATABASE_URL")
+if uri and uri.startswith("postgres://"):
+    uri = uri.replace("postgres://", "postgresql://", 1)
 app=Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DATABASE_URL"]
+app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 class FeedBack_form(db.Model):
