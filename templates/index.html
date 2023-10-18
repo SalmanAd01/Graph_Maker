@@ -43,6 +43,15 @@
                     <li class="nav-item">
                         <a class="nav-link" name="feed" href="{{ url_for('feedback') }}">Feedback!</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" name="feed" href="{{ url_for('bar_chart') }}">Bar Chart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" name="feed" href="{{ url_for('pie_chart') }}">Pie Chart</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" name="feed" href="{{ url_for('histogram') }}">Histogram</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -146,12 +155,12 @@
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     </div>
     <h2>Types Of Graphs</h2><br>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="row row-cols-1 row-cols-md-3 g-4 mb-5">
         <div class="col">
             <div class="card">
                 <img src="{{url_for('static',filename='Line_Graph.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">1.Line Graph</h5>
+                    <h5 class="card-title">1. Line Graph</h5>
                     <p class="card-text">Line graphs are represented by a group of data points joined together by a
                         straight line. Each of these data points describes the relationship between the horizontal and
                         the vertical axis on the graph.</p>
@@ -163,7 +172,7 @@
             <div class="card">
                 <img src="{{url_for('static',filename='Area_Chart.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">2.Area Chart</h5>
+                    <h5 class="card-title">2. Area Chart</h5>
                     <p class="card-text">Area charts are used to collectively measure data trends over a period of time
                         by coloring the area between the line segment and the x-axis. In simpler terms, an area chart is
                         an extension of the line chart.</p>
@@ -176,7 +185,7 @@
             <div class="card">
                 <img src="{{url_for('static',filename='Pie_Chart.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">3.Pie Chart</h5>
+                    <h5 class="card-title">3. Pie Chart</h5>
                     <p class="card-text">A pie chart is a circular graph used to illustrate numerical proportions in a
                         dataset. This graph is usually divided into various sectors, where each sector represents the
                         proportion of a particular numerical element in the set.
@@ -189,13 +198,28 @@
             <div class="card">
                 <img src="{{url_for('static',filename='Bar_Graph.png')}}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">4.Bar Graph</h5>
+                    <h5 class="card-title">4. Bar Graph</h5>
                     <p class="card-text">A bar chart is a graph represented by spaced rectangular bars that describe the
                         data points in a set of data. It is usually used to plot discrete and categorical data. The
                         horizontal axis of the chart represents categorical data while
                         the vertical axis of the chart defines discrete data. Although the rectangular bars in a bar
                         chart are mostly placed vertically, they can also be horizontal.</p>
                     <a href="https://en.wikipedia.org/wiki/Bar_chart" class="btn btn-primary">Explore</a>
+
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <img src="{{url_for('static',filename='histogram.png')}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">5. Histogram</h5>
+                    <p class="card-text">A histogram is a graphical representation of the distribution of a dataset. It
+                        is a way to visualize the frequency or occurrence of data points within various intervals or
+                        "bins." In a histogram, the data is divided into discrete intervals, and the height of each bar
+                        in the graph represents the number of data points or the frequency of data falling within that
+                        interval.</p>
+                    <a href="https://en.wikipedia.org/wiki/Histogram" class="btn btn-primary">Explore</a>
 
                 </div>
             </div>
