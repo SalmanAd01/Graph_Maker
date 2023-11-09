@@ -1,0 +1,20 @@
+<form action="/bar_chart" method="post">
+    {% for i in range(value_to) %}
+    <div class="container">
+
+        <div class="row">
+            <div class="col">
+                <label class="inline">Enter The X{{ i+1 }} Co-Ordinate</label>
+                <input class="inline" type="text" class="form-control" name=x{{ i }} placeholder="Enter X Co-Ordinate"
+                    aria-label="First name">
+            </div>
+            <div class="col">
+                <label class="inline">Enter The Y{{ i+1 }} Co-Ordinate</label>
+                <input class="inline" type="text" class="form-control" name=y{{ i }} placeholder="Enter Y Co-Ordinate"
+                    aria-label="First name">
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <button type="submit">sub</button>
+</form>
