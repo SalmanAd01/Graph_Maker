@@ -144,17 +144,6 @@ def plotagraph():
 def pie_chart():
     if request.method == 'POST':
         try:
-            # label = [request.form.get('x_label_1'),
-            #          request.form.get('x_label_2'),
-            #          request.form.get('x_label_3'),
-            #          request.form.get('x_label_4'),
-            #          ]
-            # size = [request.form.get('size_1'),
-            #         request.form.get('size_2'),
-            #         request.form.get('size_3'),
-            #         request.form.get('size_4'),
-            #         ]
-
             label = []
             size = []
             for i in range((len(request.form.to_dict())//2)):
@@ -218,13 +207,6 @@ def bar_chart():
             for i in range((len(request.form.to_dict())//2)):
                 x_labels.append((request.form['x'+str(i)]))
                 y_values.append(float(request.form['y'+str(i)]))
-            # x_labels = [request.form.get(
-            #     'x_label_1'), request.form.get('x_label_2')]
-            # y_values = [request.form.get(
-            #     'y_value_1'), request.form.get('y_value_2')]
-
-            # Convert y_values to floats
-            # y_values = [float(y) for y in y_values]
 
             print(x_labels, y_values)
 
@@ -279,10 +261,6 @@ def histogram():
             for i in range((len(request.form.to_dict())//2)):
                 x_labels.append((request.form['x_label_'+str(i)]))
                 y_values.append((request.form['y_value_'+str(i)]))
-            # x_labels = [request.form.get(
-            #     'x_label_1'), request.form.get('x_label_2')]
-            # y_values = [request.form.get(
-            #     'y_value_1'), request.form.get('y_value_2')]
 
             # Convert y_values to floats
             y_values = [float(y) for y in y_values]
@@ -302,7 +280,6 @@ def histogram():
             plt.savefig(img)
             img.seek(0)
             histogram_url = base64.b64encode(img.getvalue()).decode()
-            # print(histogram_url)
             return render_template('plot_hist.html', histogram_url=histogram_url)
 
         except Exception as e:
