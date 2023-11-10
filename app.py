@@ -144,16 +144,12 @@ def plotagraph():
 def pie_chart():
     if request.method == 'POST':
         try:
-            label = [request.form.get('x_label_1'),
-                     request.form.get('x_label_2'),
-                     request.form.get('x_label_3'),
-                     request.form.get('x_label_4'),
-                     ]
-            size = [request.form.get('size_1'),
-                    request.form.get('size_2'),
-                    request.form.get('size_3'),
-                    request.form.get('size_4'),
-                    ]
+            label = []
+            size = []
+            for i in range((len(request.form.to_dict())//2)):
+                label.append((request.form['x'+str(i)]))
+                size.append((request.form['y'+str(i)]))
+
             size = [float(i) for i in size]
 
             # Generate the pie chart
@@ -188,17 +184,29 @@ def upcoming_features():
 # ROSPL
 
 
+@app.route('/bar_start', methods=['GET', 'POST'])
+def bar_start():
+    return render_template('bar_start.html')
+
+@app.route('/hist_start', methods=['GET', 'POST'])
+def hist_start():
+    return render_template('hist_start.html')
+
+
+@app.route('/pie_start', methods=['GET', 'POST'])
+def pie_start():
+    return render_template('pie_start.html')
+
+
 @app.route('/bar_chart', methods=['GET', 'POST'])
 def bar_chart():
     if request.method == 'POST':
         try:
-            x_labels = [request.form.get(
-                'x_label_1'), request.form.get('x_label_2')]
-            y_values = [request.form.get(
-                'y_value_1'), request.form.get('y_value_2')]
-
-            # Convert y_values to floats
-            # y_values = [float(y) for y in y_values]
+            x_labels = []
+            y_values = []
+            for i in range((len(request.form.to_dict())//2)):
+                x_labels.append((request.form['x'+str(i)]))
+                y_values.append(float(request.form['y'+str(i)]))
 
             print(x_labels, y_values)
 
@@ -221,17 +229,38 @@ def bar_chart():
             print(e)
             return redirect(url_for('home'))
     else:
-        return render_template('bar_chart.html')
+        return render_template('bar_start.html')
+
+
+@app.route('/bar_inputs_all', methods=['POST'])
+def bar_inputs_all():
+    if request.method == 'POST':
+        val = int(request.form['bar_input'])
+        return render_template("bar_for_loop.html", value_to=val)
+
+
+@app.route('/pie_inputs_all', methods=['POST'])
+def pie_inputs_all():
+    if request.method == 'POST':
+        val = int(request.form['pie_input'])
+        return render_template("pie_for_loop.html", value_to=val)
+
+@app.route('/hist_inputs_all', methods=['POST'])
+def hist_inputs_all():
+    if request.method == 'POST':
+        val = int(request.form['hist_input'])
+        return render_template("hist_for_loop.html", value_to=val)
 
 
 @app.route('/histogram', methods=['GET', 'POST'])
 def histogram():
     if request.method == 'POST':
         try:
-            x_labels = [request.form.get(
-                'x_label_1'), request.form.get('x_label_2')]
-            y_values = [request.form.get(
-                'y_value_1'), request.form.get('y_value_2')]
+            x_labels = []
+            y_values = []
+            for i in range((len(request.form.to_dict())//2)):
+                x_labels.append((request.form['x_label_'+str(i)]))
+                y_values.append((request.form['y_value_'+str(i)]))
 
             # Convert y_values to floats
             y_values = [float(y) for y in y_values]
@@ -251,7 +280,6 @@ def histogram():
             plt.savefig(img)
             img.seek(0)
             histogram_url = base64.b64encode(img.getvalue()).decode()
-            # print(histogram_url)
             return render_template('plot_hist.html', histogram_url=histogram_url)
 
         except Exception as e:
